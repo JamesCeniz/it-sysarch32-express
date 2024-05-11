@@ -1,5 +1,5 @@
 const express = require('express');
-const stripe = require('stripe')('YOUR_STRIPE_SECRET_KEY'); // Replace with your secret key
+const stripe = require('stripe')('sk_test_51PF3OE2LIH2lHJASm5ZnxF4dBnwmL72T908gf2JAOBVcdUEadFHloawTuFhCLWc9pPmshR9PhbmLDnYiMByHMj8L00H1PludIJ'); // Replace with your secret key
 const cors = require('cors');
 
 // Create an instance of Express app
@@ -15,9 +15,9 @@ app.use(cors());
 app.post('/create-checkout-session', async (req, res) => {
   const { productName, price } = req.body;
 
-  const baseUrl = 'http://localhost:5173';
-  const successUrl = `${baseUrl}/complete`;
-  const cancelUrl = `${baseUrl}/cancel`;
+  const baseUrl = 'http://34.126.113.221';
+  const successUrl = `${baseUrl}/`;
+  const cancelUrl = `${baseUrl}/`;
 
   // Create a checkout session using Stripe API
   const session = await stripe.checkout.sessions.create({
